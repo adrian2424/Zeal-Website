@@ -62,20 +62,20 @@ a:hover {
 //<![CDATA[
 var decode = function ( text ) {
     text = text.replace(/\+/g, " ");
-    text = text.replace(/%[a-fA-F0-9]{2}/g, 
+    text = text.replace(/%[a-fA-F0-9]{2}/g,
         function ( text ) {
             return String.fromCharCode( "0x" + text.substr(1,2));
         }
     );
     return text;
 }
-    
+
 var display_data = function () {
     var query = location.search.replace("?", "");
     if ( query == "" ) return;
-    
+
     var fields = query.split("&");
-    
+
     if ( fields.length == 0 ) {
         document.write("<p>No data was submitted.</p>");
     } else {
